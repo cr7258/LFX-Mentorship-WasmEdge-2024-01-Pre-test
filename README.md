@@ -2,14 +2,25 @@
 
 Applied Issue: [Integrate whisper.cpp as a new WASI-NN backend](https://github.com/WasmEdge/WasmEdge/issues/3170)
 
-## Environment
+* [1 Environment](#1-environment)
+* [2 Build WasmEdge with WASI-NN llama.cpp Backend](#2-build-wasmedge-with-wasi-nn-llamacpp-backend)
+* [3 Create an OpenAI compatible API server for your LLM](#3-create-an-openai-compatible-api-server-for-your-llm)
+    * [3.1 Get the llama-api-server.wasm app](#31-get-the-llama-api-serverwasm-app)
+    * [3.2 Download the model](#32-download-the-model)
+    * [3.3 Run the API server via curl](#33-run-the-api-server-via-curl)
+    * [3.4 Test the API server via terminal](#34-test-the-api-server-via-terminal)
+    * [4 Add a web UI](#4-add-a-web-ui)
+* [5 whisper.cpp](#5-whispercpp)
+    * [5.1 Use main example](#51-use-main-example)
+    * [5.2 Real-time audio input example](#52-real-time-audio-input-example)
+## 1 Environment
 
 ```bash
 uname -a
 Darwin WXQ6ML73V1 23.2.0 Darwin Kernel Version 23.2.0: Wed Nov 15 21:53:18 PST 2023; root:xnu-10002.61.3~2/RELEASE_ARM64_T6000 arm64
 ```
 
-## Build WasmEdge with WASI-NN llama.cpp Backend
+## 2 Build WasmEdge with WASI-NN llama.cpp Backend
 
 Install dependencies.
 
@@ -49,21 +60,21 @@ cmake --install build
 
 ![install-wasmedge](./image/install-wasmedge.jpg)
 
-## Create an OpenAI compatible API server for your LLM
+## 3 Create an OpenAI compatible API server for your LLM
 
-### Get the llama-api-server.wasm app
+### 3.1 Get the llama-api-server.wasm app
 
 ```bash
 curl -LO https://github.com/second-state/LlamaEdge/releases/latest/download/llama-api-server.wasm
 ```
 
-### Download the model
+### 3.2 Download the model
 
 ```bash
 curl -LO https://huggingface.co/second-state/Llama-2-7B-Chat-GGUF/resolve/main/Llama-2-7b-chat-hf-Q5_K_M.gguf
 ```
 
-### Run the API server via curl
+### 3.3 Run the API server via curl
 
 ```bash
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf llama-api-server.wasm -p llama-2-chat
@@ -72,7 +83,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf ll
 ![run-api-server-without-ui](./image/run-api-server-without-ui.jpg)
 
 
-### Test the API server via terminal
+### 3.4 Test the API server via terminal
 
 List models.
 
@@ -167,7 +178,7 @@ The following command sends a prompt to the API server and gets the completion:
 
 ```
 
-### Add a web UI
+### 4 Add a web UI
 
 Download front-end Web UI and extract it.
 
@@ -188,7 +199,7 @@ Open http://127.0.0.1:8080 from the browser.
 
 ![access-web-ui](./image/access-web-ui.jpg)
 
-## whisper.cpp
+## 5 whisper.cpp
 
 First clone the repository:
 
@@ -196,7 +207,7 @@ First clone the repository:
 git clone https://github.com/ggerganov/whisper.cpp.git
 ```
 
-### Use main example
+### 5.1 Use main example
 
 Download ggml model base.en:
 
@@ -221,7 +232,7 @@ Convert audio to text.
 
 ![convert-audio-to-text](./image/convert-audio-to-text.jpg)
 
-### Real-time audio input example
+### 5.2 Real-time audio input example
 
 This is a naive example of performing real-time inference on audio from your microphone. 
 
