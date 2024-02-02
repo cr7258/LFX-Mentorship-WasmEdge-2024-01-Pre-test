@@ -230,3 +230,4 @@ make stream
 ./stream -m ./models/ggml-base.en.bin -t 8 --step 500 --length 5000
 ```
 
+https://github.com/cr7258/LFX-Mentorship-WasmEdge-2024-01-Pre-test/assets/40051120/0799e6b9-d5bf-410a-b368-30a005fd34f8
