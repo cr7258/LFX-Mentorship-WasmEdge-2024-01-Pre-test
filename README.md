@@ -178,7 +178,7 @@ The following command sends a prompt to the API server and gets the completion:
 
 ```
 
-### 4 Add a web UI
+### 3.4 Add a web UI
 
 Download front-end Web UI and extract it.
 
@@ -199,7 +199,7 @@ Open http://127.0.0.1:8080 from the browser.
 
 ![access-web-ui](./image/access-web-ui.jpg)
 
-## 5 whisper.cpp
+## 4 whisper.cpp
 
 First clone the repository:
 
@@ -207,7 +207,7 @@ First clone the repository:
 git clone https://github.com/ggerganov/whisper.cpp.git
 ```
 
-### 5.1 Use main example
+### 4.1 Use main example
 
 Download ggml model base.en:
 
@@ -232,7 +232,7 @@ Convert audio to text.
 
 ![convert-audio-to-text](./image/convert-audio-to-text.jpg)
 
-### 5.2 Real-time audio input example
+### 4.2 Real-time audio input example
 
 This is a naive example of performing real-time inference on audio from your microphone. 
 
