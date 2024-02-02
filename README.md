@@ -20,7 +20,7 @@ brew install llvm
 build and install WasmEdge from source directly on the macOS arm64 platform.
 
 ```bash
-git clone https://github.com/WasmEdge/WasmEdge.git
+git clone https://github.com/WasmEdge/WasmEdge.git -b hydai/0.13.5_ggml_lts 
 cd WasmEdge
 
 # Apple Silicon Model
