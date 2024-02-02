@@ -1,4 +1,6 @@
-# LFX-Mentorship-WasmEdge-2024-01-Pre-test
+# LFX-Mentorship-WasmEdge-2024-01-Pre-test 
+
+Applied Issue: [Integrate whisper.cpp as a new WASI-NN backend](https://github.com/WasmEdge/WasmEdge/issues/3170)
 
 ## Environment
 
@@ -196,7 +198,6 @@ git clone https://github.com/ggerganov/whisper.cpp.git
 
 ### Use main example
 
-```bash
 Download ggml model base.en:
 
 ```bash
@@ -220,7 +221,7 @@ Convert audio to text.
 
 ![convert-audio-to-text](./image/convert-audio-to-text.jpg)
 
-## Real-time audio input example
+### Real-time audio input example
 
 This is a naive example of performing real-time inference on audio from your microphone. 
 
