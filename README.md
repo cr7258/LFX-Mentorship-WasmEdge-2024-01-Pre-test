@@ -185,3 +185,47 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf ll
 Open http://127.0.0.1:8080 from the browser.
 
 ![access-web-ui](./image/access-web-ui.jpg)
+
+## whisper.cpp
+
+First clone the repository:
+
+```bash
+git clone https://github.com/ggerganov/whisper.cpp.git
+```
+
+### Use main example
+
+```bash
+Download ggml model base.en:
+
+```bash
+bash ./models/download-ggml-model.sh base.en
+Now build the main example and transcribe an audio file like this:
+```
+
+Build the main example:
+
+```
+make
+```
+
+![build-main-example](./image/build-main-example.jpg)
+
+Convert audio to text.
+
+```bash
+./main -m models/ggml-base.en.bin -f samples/jfk.wav
+```
+
+![convert-audio-to-text](./image/convert-audio-to-text.jpg)
+
+## Real-time audio input example
+
+This is a naive example of performing real-time inference on audio from your microphone. 
+
+```bash
+make stream
+./stream -m ./models/ggml-base.en.bin -t 8 --step 500 --length 5000
+```
+
