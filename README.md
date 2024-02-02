@@ -5,14 +5,15 @@ Applied Issue: [Integrate whisper.cpp as a new WASI-NN backend](https://github.c
 * [1 Environment](#1-environment)
 * [2 Build WasmEdge with WASI-NN llama.cpp Backend](#2-build-wasmedge-with-wasi-nn-llamacpp-backend)
 * [3 Create an OpenAI compatible API server for your LLM](#3-create-an-openai-compatible-api-server-for-your-llm)
-    * [3.1 Get the llama-api-server.wasm app](#31-get-the-llama-api-serverwasm-app)
-    * [3.2 Download the model](#32-download-the-model)
-    * [3.3 Run the API server via curl](#33-run-the-api-server-via-curl)
-    * [3.4 Test the API server via terminal](#34-test-the-api-server-via-terminal)
-    * [4 Add a web UI](#4-add-a-web-ui)
-* [5 whisper.cpp](#5-whispercpp)
-    * [5.1 Use main example](#51-use-main-example)
-    * [5.2 Real-time audio input example](#52-real-time-audio-input-example)
+  * [3.1 Get the llama-api-server.wasm app](#31-get-the-llama-api-serverwasm-app)
+  * [3.2 Download the model](#32-download-the-model)
+  * [3.3 Run the API server via curl](#33-run-the-api-server-via-curl)
+  * [3.4 Test the API server via terminal](#34-test-the-api-server-via-terminal)
+  * [3.4 Add a web UI](#34-add-a-web-ui)
+* [4 whisper.cpp](#4-whispercpp)
+  * [4.1 Use main example](#41-use-main-example)
+  * [4.2 Real-time audio input example](#42-real-time-audio-input-example)
+
 ## 1 Environment
 
 ```bash
