@@ -231,3 +231,6 @@ make stream
 ```
 
 https://github.com/cr7258/LFX-Mentorship-WasmEdge-2024-01-Pre-test/assets/40051120/0799e6b9-d5bf-410a-b368-30a005fd34f8
+
+[Audio: Running WasmEdge Runtime as Dapr sidecar services](https://www.youtube.com/watch?v=t_sQP6Qpf7U)
+
